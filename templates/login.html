@@ -5,9 +5,10 @@
 {% if messages %}
 {% for msg in messages %}
 {{ msg }}
-{% endif %}
+{% endfor %}
 {% endif %}
 {% endwith %}
+
 <form action="{{ url_for('login') }}" method="post">
 <h3>Enter your Login credentials</h3><br><br>
 <label for="uname">Name</label>
@@ -15,5 +16,29 @@
 <label for="pass">Password</label>
 <input type="password" name="pass"><br><br>
 <input type="submit" name="submit" value="Login">
-</form>
+</form method="POST" action="{{ url_for('login') }}">
+ <div class="">
+        <div class="">
+            <h2>Login</h2>
+            <form action="">
+                <div class="">
+                    <span class=""></span><ion-icon name="mail"></ion-icon>
+                    <label>Email</label>
+                    <input type="email" required>
+                </div>
+                <div class="">
+                    <span class=""></span><ion-icon name="document-lock"></ion-icon>
+                    <label>Password</label>
+                    <input type="password" required>
+                </div>
+                <div class="">
+                    <label><input type="checkbox">Remember me</label>
+                    <a href="#">Forget password</a>
+                </div>
+                <button type="submit" class="">Login</button>
+            </form>
+        </div>
+    </div>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 {% endblock %}
