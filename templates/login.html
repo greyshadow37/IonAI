@@ -1,14 +1,19 @@
 {% extends "base.html" %}
 {% block title %}Login to IonAI{% endblock %}
 {% block content %}
+{% with messages=get_flashed_messages() %}
+{% if messages %}
+{% for msg in messages %}
+{{ msg }}
+{% endif %}
+{% endif %}
+{% endwith %}
 <form action="{{ url_for('login') }}" method="post">
 <h3>Enter your Login credentials</h3><br><br>
-<p>Name:</p>
-<input type="text" name="Name"><br>
-<p>E-mail:</p>
-<input type="email" name="email"><br>
-<p>Password:</p>
-<input type="password" name="password"><br><br>
+<label for="uname">Name</label>
+<input type="text" name="uname"><br>
+<label for="pass">Password</label>
+<input type="password" name="pass"><br><br>
 <input type="submit" name="submit" value="Login">
 </form>
 {% endblock %}
